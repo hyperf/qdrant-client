@@ -13,10 +13,14 @@ namespace Hyperf\Qdrant\Struct;
 
 use Hyperf\Stringable\Str;
 use ReflectionClass;
+use ReflectionNamedType;
 use ReflectionParameter;
 
 trait InstanceFromArray
 {
+    /**
+     * @param null|array<string, mixed> $attributes
+     */
     public static function fromArray(?array $attributes): ?self
     {
         if (! $attributes) {
@@ -32,12 +36,12 @@ trait InstanceFromArray
                 $attribute = $attributes[$name] ?? $attributes[$param->getName()];
             }
 
-            if ($param->getType()) {
-                if (method_exists($param->getType()->getName(), 'tryFrom')) {
-                    return $param->getType()->getName()::tryFrom($attribute);
+            if (($type = $param->getType()) && $type instanceof ReflectionNamedType) {
+                if (method_exists($type->getName(), 'tryFrom')) {
+                    return $type->getName()::tryFrom($attribute);
                 }
-                if (method_exists($param->getType()->getName(), 'fromArray')) {
-                    return $param->getType()->getName()::fromArray($attribute);
+                if (method_exists($type->getName(), 'fromArray')) {
+                    return $type->getName()::fromArray($attribute);
                 }
             }
             if (isset($attribute)) {
@@ -52,6 +56,9 @@ trait InstanceFromArray
         return new self(...$values);
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function toArray(): array
     {
         $result = [];
