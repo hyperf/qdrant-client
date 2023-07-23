@@ -13,4 +13,5 @@ namespace Hyperf\Qdrant\Connection;
 
 interface ClientInterface
 {
+    public function request(string $method, $uri, array $body = null): mixed;
 }
