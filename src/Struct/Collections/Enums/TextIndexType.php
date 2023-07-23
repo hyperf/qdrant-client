@@ -9,13 +9,9 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Hyperf\Qdrant\Collection\Enums;
+namespace Hyperf\Qdrant\Struct\Collections\Enums;
 
-enum CollectionStatus: string
+enum TextIndexType: string
 {
-    case GREEN = 'green';
-
-    case YELLOW = 'yellow';
-
-    case RED = 'red';
+    case TEXT = 'text';
 }

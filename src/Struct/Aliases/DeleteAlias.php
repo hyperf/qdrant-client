@@ -9,17 +9,15 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Hyperf\Qdrant\Collection\Enums;
+namespace Hyperf\Qdrant\Struct\Aliases;
 
-enum PayloadSchemaType: string
+use Hyperf\Qdrant\Struct\InstanceFromArray;
+
+class DeleteAlias
 {
-    case KEYWORD = 'keyword';
-
-    case INTEGER = 'integer';
-
-    case FLOAT = 'float';
-
-    case GEO = 'geo';
-
-    case TEXT = 'text';
+    use InstanceFromArray;
+    public function __construct(
+        protected string $aliasName,
+    ) {
+    }
 }

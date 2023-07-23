@@ -9,13 +9,13 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Hyperf\Qdrant\Collection;
+namespace Hyperf\Qdrant\Struct\Collections;
 
-use Hyperf\Contract\Arrayable;
-use Hyperf\Qdrant\Collection\Enums\CollectionStatus;
-use Hyperf\Qdrant\Collection\Enums\OptimizersStatus;
+use Hyperf\Qdrant\Struct\Collections\Enums\CollectionStatus;
+use Hyperf\Qdrant\Struct\Collections\Enums\OptimizersStatus;
+use Hyperf\Qdrant\Struct\InstanceFromArray;
 
-class CollectionInfo implements Arrayable
+class CollectionInfo
 {
     use InstanceFromArray;
 
@@ -35,12 +35,5 @@ class CollectionInfo implements Arrayable
     public function getName(): string
     {
         return $this->name;
-    }
-
-    public function toArray(): array
-    {
-        return array_map(function ($value) {
-            return $value instanceof Arrayable ? $value->toArray() : $value;
-        }, get_object_vars($this));
     }
 }

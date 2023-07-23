@@ -9,15 +9,16 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Hyperf\Qdrant\Collection;
+namespace Hyperf\Qdrant\Struct\Collections;
 
-class ScalarQuantizationConfig
+use Hyperf\Qdrant\Struct\InstanceFromArray;
+
+class CollectionParamsDiff
 {
     use InstanceFromArray;
     public function __construct(
-        protected string $type = 'int8',
-        protected ?float $quantile = null,
-        protected ?bool $alwaysRam = null,
+        protected ?int $replicationFactor,
+        protected ?int $writeConsistencyFactor,
     ) {
     }
 }

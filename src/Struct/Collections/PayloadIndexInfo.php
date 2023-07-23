@@ -1,8 +1,8 @@
 <?php
 
-namespace Hyperf\Qdrant\Collection;
+namespace Hyperf\Qdrant\Struct\Collections;
 
-use Hyperf\Qdrant\Collection\Enums\PayloadSchemaType;
+use Hyperf\Qdrant\Struct\Collections\Enums\PayloadSchemaType;
 
 class PayloadIndexInfo
 {
