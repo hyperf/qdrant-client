@@ -9,20 +9,19 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-
 namespace HyperfTest\Qdrant\Cases;
 
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 
 /**
  * Class AbstractTestCase.
  */
 abstract class AbstractTestCase extends TestCase
 {
-
     protected function callNonpublicMethod(object $object, string $method)
     {
-        $reflection = new \ReflectionClass($object);
+        $reflection = new ReflectionClass($object);
         $reflectionMethod = $reflection->getMethod($method);
         $reflectionMethod->setAccessible(true);
         return $reflectionMethod->invoke($object);
@@ -30,10 +29,9 @@ abstract class AbstractTestCase extends TestCase
 
     protected function getNonpublicProperty(object $object, string $property)
     {
-        $reflection = new \ReflectionClass($object);
+        $reflection = new ReflectionClass($object);
         $reflectionProperty = $reflection->getProperty($property);
         $reflectionProperty->setAccessible(true);
         return $reflectionProperty->getValue($object);
     }
-
 }

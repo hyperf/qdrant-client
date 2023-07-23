@@ -16,6 +16,7 @@ use Hyperf\Qdrant\Struct\InstanceFromArray;
 class OptimizersConfig
 {
     use InstanceFromArray;
+
     public function __construct(
         protected float $deletedThreshold,
         protected int $vacuumMinVectorNumber,
@@ -27,5 +28,4 @@ class OptimizersConfig
         protected ?int $indexingThreshold,
     ) {
     }
-
 }

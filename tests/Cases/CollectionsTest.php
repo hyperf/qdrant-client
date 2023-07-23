@@ -11,13 +11,17 @@ declare(strict_types=1);
  */
 namespace HyperfTest\Qdrant\Cases;
 
+use Hyperf\Qdrant\Api\Collections;
+use Hyperf\Qdrant\Config;
+use Hyperf\Qdrant\Connection\HttpClient;
 use Hyperf\Qdrant\Struct\Collections\CollectionInfo;
 use Hyperf\Qdrant\Struct\Collections\Enums\Distance;
 use Hyperf\Qdrant\Struct\Collections\VectorParams;
-use Hyperf\Qdrant\Config;
-use Hyperf\Qdrant\Connection\HttpClient;
-use Hyperf\Qdrant\Api\Collections;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 class CollectionsTest extends AbstractTestCase
 {
     protected string $collectionName = 'testCollection';

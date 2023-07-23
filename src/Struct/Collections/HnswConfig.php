@@ -26,5 +26,4 @@ class HnswConfig
         protected ?int $payloadM = null,
     ) {
     }
-
 }

@@ -16,6 +16,7 @@ use Hyperf\Qdrant\Struct\InstanceFromArray;
 class CollectionParams
 {
     use InstanceFromArray;
+
     public function __construct(
         protected VectorParams $vectors,
         protected ?int $shardNumber,
