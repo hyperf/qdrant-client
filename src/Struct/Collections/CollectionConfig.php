@@ -9,11 +9,11 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Hyperf\Qdrant\Collection;
+namespace Hyperf\Qdrant\Struct\Collections;
 
-use Hyperf\Contract\Arrayable;
+use Hyperf\Qdrant\Struct\InstanceFromArray;
 
-class CollectionConfig implements Arrayable
+class CollectionConfig
 {
     use InstanceFromArray;
 
@@ -24,12 +24,5 @@ class CollectionConfig implements Arrayable
         protected WalConfig $walConfig,
         protected ?QuantizationConfig $quantizationConfig,
     ) {
-    }
-
-    public function toArray(): array
-    {
-        return array_map(function ($value) {
-            return $value instanceof Arrayable ? $value->toArray() : $value;
-        }, get_object_vars($this));
     }
 }

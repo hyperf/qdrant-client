@@ -9,13 +9,13 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Hyperf\Qdrant\Collection;
+namespace Hyperf\Qdrant\Struct\Collections\Enums;
 
-class QuantizationConfig
+enum CollectionStatus: string
 {
-    use InstanceFromArray;
+    case GREEN = 'green';
 
-    public function __construct(protected ?ScalarQuantizationConfig $scalarQuantizationConfig)
-    {
-    }
+    case YELLOW = 'yellow';
+
+    case RED = 'red';
 }

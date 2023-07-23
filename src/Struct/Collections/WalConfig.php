@@ -9,7 +9,9 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Hyperf\Qdrant\Collection;
+namespace Hyperf\Qdrant\Struct\Collections;
+
+use Hyperf\Qdrant\Struct\InstanceFromArray;
 
 class WalConfig
 {
@@ -19,5 +21,4 @@ class WalConfig
         protected int $walSegmentsAhead,
     ) {
     }
-
 }

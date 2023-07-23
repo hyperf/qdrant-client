@@ -9,10 +9,10 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Hyperf\Qdrant\Collection;
+namespace Hyperf\Qdrant\Struct\Collections;
 
-use Hyperf\Qdrant\Collection\Enums\TextIndexType;
-use Hyperf\Qdrant\Collection\Enums\TokenizerType;
+use Hyperf\Qdrant\Struct\Collections\Enums\TextIndexType;
+use Hyperf\Qdrant\Struct\Collections\Enums\TokenizerType;
 
 class PayloadSchemaParams
 {

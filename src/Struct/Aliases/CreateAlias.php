@@ -9,17 +9,16 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Hyperf\Qdrant\Collection;
+namespace Hyperf\Qdrant\Struct\Aliases;
 
-class CollectionParams
+use Hyperf\Qdrant\Struct\InstanceFromArray;
+
+class CreateAlias
 {
     use InstanceFromArray;
     public function __construct(
-        protected VectorParams $vectors,
-        protected ?int $shardNumber,
-        protected ?int $replicationFactor,
-        protected ?int $writeConsistencyFactor,
-        protected bool $onDiskPayload,
+        protected string $collectionName,
+        protected string $aliasName,
     ) {
     }
 }

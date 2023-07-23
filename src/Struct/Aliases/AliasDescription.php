@@ -9,19 +9,16 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Hyperf\Qdrant\Collection;
+namespace Hyperf\Qdrant\Struct\Aliases;
 
-class HnswConfigDiff
+use Hyperf\Qdrant\Struct\InstanceFromArray;
+
+class AliasDescription
 {
     use InstanceFromArray;
-
     public function __construct(
-        protected ?int $m,
-        protected ?int $efConstruct,
-        protected ?int $fullScanThreshold,
-        protected ?int $maxIndexingThreads,
-        protected ?bool $onDisk,
-        protected ?int $payloadM
+        protected string $aliasName,
+        protected string $collectionName,
     ) {
     }
 }

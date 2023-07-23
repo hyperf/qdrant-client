@@ -9,19 +9,16 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Hyperf\Qdrant\Collection;
+namespace Hyperf\Qdrant\Struct\Aliases;
 
-use Hyperf\Qdrant\Collection\Enums\Distance;
+use Hyperf\Qdrant\Struct\InstanceFromArray;
 
-class VectorParams
+class RenameAlias
 {
     use InstanceFromArray;
     public function __construct(
-        protected int $size,
-        protected Distance $distance,
-        protected ?HnswConfigDiff $hnswConfig,
-        protected ?QuantizationConfig $quantizationConfig,
-        protected ?bool $onDisk,
+        protected string $oldAliasName,
+        protected string $newAliasName,
     ) {
     }
 }
