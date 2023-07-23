@@ -2,7 +2,7 @@
 
 namespace Hyperf\Qdrant\Struct\Collections;
 
-use Hyperf\Qdrant\Struct\Collections\Enums\PayloadSchemaType;
+use Hyperf\Qdrant\Struct\PayloadSchemaType;
 
 class PayloadIndexInfo
 {
