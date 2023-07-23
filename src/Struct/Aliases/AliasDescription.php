@@ -16,6 +16,7 @@ use Hyperf\Qdrant\Struct\InstanceFromArray;
 class AliasDescription
 {
     use InstanceFromArray;
+
     public function __construct(
         protected string $aliasName,
         protected string $collectionName,

@@ -16,6 +16,7 @@ use Hyperf\Qdrant\Struct\InstanceFromArray;
 class CollectionParamsDiff
 {
     use InstanceFromArray;
+
     public function __construct(
         protected ?int $replicationFactor,
         protected ?int $writeConsistencyFactor,

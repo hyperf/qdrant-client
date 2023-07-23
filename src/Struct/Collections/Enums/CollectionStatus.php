@@ -14,8 +14,6 @@ namespace Hyperf\Qdrant\Struct\Collections\Enums;
 enum CollectionStatus: string
 {
     case GREEN = 'green';
-
     case YELLOW = 'yellow';
-
     case RED = 'red';
 }

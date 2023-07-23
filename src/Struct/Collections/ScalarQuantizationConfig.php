@@ -16,6 +16,7 @@ use Hyperf\Qdrant\Struct\InstanceFromArray;
 class ScalarQuantizationConfig
 {
     use InstanceFromArray;
+
     public function __construct(
         protected string $type = 'int8',
         protected ?float $quantile = null,

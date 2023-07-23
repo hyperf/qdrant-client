@@ -14,8 +14,6 @@ namespace Hyperf\Qdrant\Struct\Collections\Enums;
 enum TokenizerType: string
 {
     case PREFIX = 'prefix';
-
     case WHITESPACE = 'whitespace';
-
     case WORD = 'word';
 }

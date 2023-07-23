@@ -14,12 +14,8 @@ namespace Hyperf\Qdrant\Struct;
 enum PayloadSchemaType: string
 {
     case KEYWORD = 'keyword';
-
     case INTEGER = 'integer';
-
     case FLOAT = 'float';
-
     case GEO = 'geo';
-
     case TEXT = 'text';
 }

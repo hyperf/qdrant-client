@@ -16,6 +16,7 @@ use Hyperf\Qdrant\Struct\InstanceFromArray;
 class RenameAlias
 {
     use InstanceFromArray;
+
     public function __construct(
         protected string $oldAliasName,
         protected string $newAliasName,

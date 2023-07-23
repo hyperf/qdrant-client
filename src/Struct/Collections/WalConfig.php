@@ -16,6 +16,7 @@ use Hyperf\Qdrant\Struct\InstanceFromArray;
 class WalConfig
 {
     use InstanceFromArray;
+
     public function __construct(
         protected int $walCapacityMb,
         protected int $walSegmentsAhead,

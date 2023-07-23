@@ -16,6 +16,7 @@ use Hyperf\Qdrant\Struct\InstanceFromArray;
 class DeleteAlias
 {
     use InstanceFromArray;
+
     public function __construct(
         protected string $aliasName,
     ) {
