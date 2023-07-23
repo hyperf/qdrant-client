@@ -25,13 +25,13 @@ class CollectionsAliasesResponse
     ) {
     }
 
-    public static function fromArray(?array $attributes): ?static
+    public static function fromArray(?array $attributes): ?self
     {
         $aliases = array_map(
             fn (array $alias) => AliasDescription::fromArray($alias),
             $attributes['aliases'] ?? []
         );
-        return new static($aliases);
+        return new self($aliases);
     }
 
     public function toArray(): array
