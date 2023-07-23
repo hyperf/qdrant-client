@@ -9,16 +9,25 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Hyperf\Qdrant\Struct\Aliases;
+namespace Hyperf\Qdrant\Struct;
 
-use Hyperf\Qdrant\Struct\InstanceFromArray;
-
-class RenameAliasOperation
+class UpdateResult
 {
     use InstanceFromArray;
 
     public function __construct(
-        protected RenameAlias $renameAlias,
+        protected int $operationId,
+        protected UpdateStatus $status,
     ) {
+    }
+
+    public function getOperationId(): int
+    {
+        return $this->operationId;
+    }
+
+    public function getStatus(): UpdateStatus
+    {
+        return $this->status;
     }
 }

@@ -8,7 +8,7 @@ class DeleteAliasOperation
 {
     use InstanceFromArray;
     public function __construct(
-        public DeleteAlias $deleteAlias,
+        protected DeleteAlias $deleteAlias,
     ) {
     }
 }

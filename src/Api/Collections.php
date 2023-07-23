@@ -24,13 +24,13 @@ class Collections extends AbstractApi
 {
     public function getListCollections(): array
     {
-        $result = $this->client->request('GET', '/collections');
+        $result = $this->request('GET', '/collections');
         return $result['collections'];
     }
 
     public function getCollectionInfo(string $name): CollectionInfo
     {
-        $result = $this->client->request('GET', "/collections/{$name}");
+        $result = $this->request('GET', "/collections/{$name}");
 
         return CollectionInfo::fromArray($result + ['name' => $name]);
     }
@@ -60,12 +60,12 @@ class Collections extends AbstractApi
             'init_from' => $initFrom?->toArray(),
             'quantization_config' => $quantizationConfig,
         ];
-        return $this->client->request('PUT', "/collections/{$name}", $params);
+        return $this->request('PUT', "/collections/{$name}", $params);
     }
 
     public function deleteCollection(string $name): bool
     {
-        return $this->client->request('DELETE', "/collections/{$name}");
+        return $this->request('DELETE', "/collections/{$name}");
     }
 
     public function updateCollection(
@@ -77,6 +77,6 @@ class Collections extends AbstractApi
             'optimizers_config' => $configDiff?->toArray(),
             'params' => $paramsDiff?->toArray(),
         ];
-        return $this->client->request('PATCH', "/collections/{$name}", $params);
+        return $this->request('PATCH', "/collections/{$name}", $params);
     }
 }

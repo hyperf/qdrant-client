@@ -8,7 +8,7 @@ class CreateAliasOperation
 {
     use InstanceFromArray;
     public function __construct(
-        public CreateAlias $createAlias,
+        protected CreateAlias $createAlias,
     ) {
     }
 }

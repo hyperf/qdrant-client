@@ -20,13 +20,13 @@ class Aliases extends AbstractApi
 {
     public function getAllAliases(): CollectionsAliasesResponse
     {
-        $result = $this->client->request('GET', '/aliases');
+        $result = $this->request('GET', '/aliases');
         return CollectionsAliasesResponse::fromArray($result);
     }
 
     public function getListAliases(string $collectionName): CollectionsAliasesResponse
     {
-        $result = $this->client->request('GET', "/collections/{$collectionName}/aliases");
+        $result = $this->request('GET', "/collections/{$collectionName}/aliases");
         return CollectionsAliasesResponse::fromArray($result);
     }
 
@@ -37,6 +37,6 @@ class Aliases extends AbstractApi
     {
         $params = array_map(fn ($action) => $action->toArray(), $actions);
 
-        return $this->client->request('POST', '/collections/aliases', ['actions' => $params]);
+        return $this->request('POST', '/collections/aliases', ['actions' => $params]);
     }
 }
