@@ -17,7 +17,7 @@ use ReflectionParameter;
 
 trait InstanceFromArray
 {
-    public static function fromArray(?array $attributes): ?static
+    public static function fromArray(?array $attributes): ?self
     {
         if (! $attributes) {
             return null;
@@ -49,7 +49,7 @@ trait InstanceFromArray
             return null;
         }, $params);
 
-        return new static(...$values);
+        return new self(...$values);
     }
 
     public function toArray(): array
