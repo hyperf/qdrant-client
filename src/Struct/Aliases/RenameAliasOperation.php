@@ -18,7 +18,7 @@ class RenameAliasOperation
     use InstanceFromArray;
 
     public function __construct(
-        protected RenameAlias $renameAlias,
+        public readonly RenameAlias $renameAlias,
     ) {
     }
 }

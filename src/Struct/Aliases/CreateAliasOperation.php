@@ -18,7 +18,7 @@ class CreateAliasOperation
     use InstanceFromArray;
 
     public function __construct(
-        protected CreateAlias $createAlias,
+        public readonly CreateAlias $createAlias,
     ) {
     }
 }

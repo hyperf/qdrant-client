@@ -18,9 +18,9 @@ class ScalarQuantizationConfig
     use InstanceFromArray;
 
     public function __construct(
-        protected string $type = 'int8',
-        protected ?float $quantile = null,
-        protected ?bool $alwaysRam = null,
+        public readonly string $type = 'int8',
+        public readonly ?float $quantile = null,
+        public readonly ?bool $alwaysRam = null,
     ) {
     }
 }

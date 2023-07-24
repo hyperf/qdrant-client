@@ -17,11 +17,11 @@ use Hyperf\Qdrant\Struct\Collections\Enums\TokenizerType;
 class PayloadSchemaParams
 {
     public function __construct(
-        protected TextIndexType $type,
-        protected TokenizerType $tokenizer,
-        protected ?int $minTokenLen,
-        protected ?int $maxTokenLen,
-        protected ?bool $lowercase = true,
+        public readonly TextIndexType $type,
+        public readonly TokenizerType $tokenizer,
+        public readonly ?int $minTokenLen,
+        public readonly ?int $maxTokenLen,
+        public readonly ?bool $lowercase = true,
     ) {
     }
 }

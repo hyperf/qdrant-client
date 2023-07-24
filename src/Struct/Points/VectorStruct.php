@@ -9,16 +9,17 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Hyperf\Qdrant\Struct\Collections;
+namespace Hyperf\Qdrant\Struct\Points;
 
-use Hyperf\Qdrant\Struct\InstanceFromArray;
+use Hyperf\Qdrant\Struct\InstanceFromAttribute;
+use JsonSerializable;
 
-class InitFrom
+class VectorStruct implements JsonSerializable
 {
-    use InstanceFromArray;
+    use InstanceFromAttribute;
 
     public function __construct(
-        public readonly string $collection,
+        public readonly ?array $vector = null,
     ) {
     }
 }

@@ -9,16 +9,18 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Hyperf\Qdrant\Struct\Collections;
+namespace Hyperf\Qdrant\Struct\Points\SearchCondition;
 
 use Hyperf\Qdrant\Struct\InstanceFromArray;
+use Hyperf\Qdrant\Struct\Points\ExtendedPointIds;
 
-class InitFrom
+class HasIdCondition implements ConditionInterface
 {
     use InstanceFromArray;
+    public readonly ExtendedPointIds $hasId;
 
-    public function __construct(
-        public readonly string $collection,
-    ) {
+    public function __construct(ExtendedPointIds $pointIds)
+    {
+        $this->hasId = $pointIds;
     }
 }

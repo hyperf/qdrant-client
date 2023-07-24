@@ -18,8 +18,8 @@ class CreateAlias
     use InstanceFromArray;
 
     public function __construct(
-        protected string $collectionName,
-        protected string $aliasName,
+        public readonly string $collectionName,
+        public readonly string $aliasName,
     ) {
     }
 }

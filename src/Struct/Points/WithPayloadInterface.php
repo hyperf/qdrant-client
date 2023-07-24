@@ -9,16 +9,9 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Hyperf\Qdrant\Struct\Collections;
+namespace Hyperf\Qdrant\Struct\Points;
 
-use Hyperf\Qdrant\Struct\InstanceFromArray;
-
-class InitFrom
+interface WithPayloadInterface
 {
-    use InstanceFromArray;
-
-    public function __construct(
-        public readonly string $collection,
-    ) {
-    }
+    public function getWithPayload(): mixed;
 }

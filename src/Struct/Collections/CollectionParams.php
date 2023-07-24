@@ -18,11 +18,11 @@ class CollectionParams
     use InstanceFromArray;
 
     public function __construct(
-        protected VectorParams $vectors,
-        protected ?int $shardNumber,
-        protected ?int $replicationFactor,
-        protected ?int $writeConsistencyFactor,
-        protected bool $onDiskPayload,
+        public readonly VectorParams $vectors,
+        public readonly ?int $shardNumber,
+        public readonly ?int $replicationFactor,
+        public readonly ?int $writeConsistencyFactor,
+        public readonly bool $onDiskPayload,
     ) {
     }
 }
