@@ -9,16 +9,18 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Hyperf\Qdrant\Struct\Collections;
+namespace Hyperf\Qdrant\Struct\Points\SearchCondition\Match;
 
 use Hyperf\Qdrant\Struct\InstanceFromArray;
 
-class InitFrom
+class MatchAny implements MatchInterface
 {
     use InstanceFromArray;
 
-    public function __construct(
-        public readonly string $collection,
-    ) {
+    /**
+     * @param list<int|string> $any
+     */
+    public function __construct(public readonly array $any)
+    {
     }
 }

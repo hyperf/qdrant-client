@@ -18,12 +18,12 @@ class HnswConfigDiff
     use InstanceFromArray;
 
     public function __construct(
-        protected ?int $m,
-        protected ?int $efConstruct,
-        protected ?int $fullScanThreshold,
-        protected ?int $maxIndexingThreads,
-        protected ?bool $onDisk,
-        protected ?int $payloadM
+        public readonly ?int $m,
+        public readonly ?int $efConstruct,
+        public readonly ?int $fullScanThreshold,
+        public readonly ?int $maxIndexingThreads,
+        public readonly ?bool $onDisk,
+        public readonly ?int $payloadM
     ) {
     }
 }

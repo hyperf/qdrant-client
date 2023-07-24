@@ -16,8 +16,8 @@ class UpdateResult
     use InstanceFromArray;
 
     public function __construct(
-        protected int $operationId,
-        protected UpdateStatus $status,
+        public readonly int $operationId,
+        public readonly UpdateStatus $status,
     ) {
     }
 

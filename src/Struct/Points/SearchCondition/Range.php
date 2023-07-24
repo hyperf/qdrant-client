@@ -9,16 +9,20 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Hyperf\Qdrant\Struct\Collections;
+namespace Hyperf\Qdrant\Struct\Points\SearchCondition;
 
 use Hyperf\Qdrant\Struct\InstanceFromArray;
+use JsonSerializable;
 
-class InitFrom
+class Range implements JsonSerializable
 {
     use InstanceFromArray;
 
     public function __construct(
-        public readonly string $collection,
+        public readonly ?float $lt = null,
+        public readonly ?float $gt = null,
+        public readonly ?float $lte = null,
+        public readonly ?float $gte = null,
     ) {
     }
 }

@@ -18,11 +18,11 @@ class CollectionConfig
     use InstanceFromArray;
 
     public function __construct(
-        protected CollectionParams $params,
-        protected HnswConfig $hnswConfig,
-        protected OptimizersConfig $optimizerConfig,
-        protected WalConfig $walConfig,
-        protected ?QuantizationConfig $quantizationConfig,
+        public readonly CollectionParams $params,
+        public readonly HnswConfig $hnswConfig,
+        public readonly OptimizersConfig $optimizerConfig,
+        public readonly WalConfig $walConfig,
+        public readonly ?QuantizationConfig $quantizationConfig,
     ) {
     }
 }

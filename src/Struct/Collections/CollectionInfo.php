@@ -20,15 +20,15 @@ class CollectionInfo
     use InstanceFromArray;
 
     public function __construct(
-        protected string $name,
-        protected CollectionStatus $status,
-        protected OptimizersStatus $optimizerStatus,
-        protected int $vectorsCount,
-        protected int $indexedVectorsCount,
-        protected int $pointsCount,
-        protected int $segmentsCount,
-        protected CollectionConfig $config,
-        protected array $payloadSchema,
+        public readonly string $name,
+        public readonly CollectionStatus $status,
+        public readonly OptimizersStatus $optimizerStatus,
+        public readonly int $vectorsCount,
+        public readonly int $indexedVectorsCount,
+        public readonly int $pointsCount,
+        public readonly int $segmentsCount,
+        public readonly CollectionConfig $config,
+        public readonly array $payloadSchema,
     ) {
     }
 

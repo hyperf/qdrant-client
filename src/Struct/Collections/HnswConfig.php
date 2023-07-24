@@ -18,12 +18,12 @@ class HnswConfig
     use InstanceFromArray;
 
     public function __construct(
-        protected int $m,
-        protected int $efConstruct,
-        protected int $fullScanThreshold,
-        protected int $maxIndexingThreads = 0,
-        protected ?bool $onDisk = null,
-        protected ?int $payloadM = null,
+        public readonly int $m,
+        public readonly int $efConstruct,
+        public readonly int $fullScanThreshold,
+        public readonly int $maxIndexingThreads = 0,
+        public readonly ?bool $onDisk = null,
+        public readonly ?int $payloadM = null,
     ) {
     }
 }

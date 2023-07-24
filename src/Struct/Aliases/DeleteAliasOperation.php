@@ -18,7 +18,7 @@ class DeleteAliasOperation
     use InstanceFromArray;
 
     public function __construct(
-        protected DeleteAlias $deleteAlias,
+        public readonly DeleteAlias $deleteAlias,
     ) {
     }
 }

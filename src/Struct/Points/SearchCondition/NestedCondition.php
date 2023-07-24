@@ -9,16 +9,21 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace Hyperf\Qdrant\Struct\Collections;
+namespace Hyperf\Qdrant\Struct\Points\SearchCondition;
 
 use Hyperf\Qdrant\Struct\InstanceFromArray;
 
-class InitFrom
+class NestedCondition implements ConditionInterface
 {
     use InstanceFromArray;
 
-    public function __construct(
-        public readonly string $collection,
-    ) {
+    public readonly array $nested;
+
+    public function __construct(string $field, Filter $condition)
+    {
+        $this->nested = [
+            'key' => $field,
+            'filter' => $condition,
+        ];
     }
 }

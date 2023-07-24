@@ -19,11 +19,11 @@ class VectorParams
     use InstanceFromArray;
 
     public function __construct(
-        protected int $size,
-        protected Distance $distance,
-        protected ?HnswConfigDiff $hnswConfig = null,
-        protected ?QuantizationConfig $quantizationConfig = null,
-        protected ?bool $onDisk = false,
+        public readonly int $size,
+        public readonly Distance $distance,
+        public readonly ?HnswConfigDiff $hnswConfig = null,
+        public readonly ?QuantizationConfig $quantizationConfig = null,
+        public readonly ?bool $onDisk = false,
     ) {
     }
 }

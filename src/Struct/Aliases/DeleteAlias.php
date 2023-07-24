@@ -18,7 +18,7 @@ class DeleteAlias
     use InstanceFromArray;
 
     public function __construct(
-        protected string $aliasName,
+        public readonly string $aliasName,
     ) {
     }
 }

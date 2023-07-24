@@ -18,8 +18,8 @@ class WalConfigDiff
     use InstanceFromArray;
 
     public function __construct(
-        protected ?int $walCapacityMb,
-        protected ?int $walSegmentsAhead,
+        public readonly ?int $walCapacityMb,
+        public readonly ?int $walSegmentsAhead,
     ) {
     }
 }

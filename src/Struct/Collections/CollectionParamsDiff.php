@@ -18,8 +18,8 @@ class CollectionParamsDiff
     use InstanceFromArray;
 
     public function __construct(
-        protected ?int $replicationFactor,
-        protected ?int $writeConsistencyFactor,
+        public readonly ?int $replicationFactor,
+        public readonly ?int $writeConsistencyFactor,
     ) {
     }
 }

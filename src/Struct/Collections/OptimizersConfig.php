@@ -18,14 +18,14 @@ class OptimizersConfig
     use InstanceFromArray;
 
     public function __construct(
-        protected float $deletedThreshold,
-        protected int $vacuumMinVectorNumber,
-        protected int $defaultSegmentNumber,
-        protected int $flushIntervalSec,
-        protected int $maxOptimizationThreads,
-        protected ?int $maxSegmentSize,
-        protected ?int $memmapThreshold,
-        protected ?int $indexingThreshold,
+        public readonly float $deletedThreshold,
+        public readonly int $vacuumMinVectorNumber,
+        public readonly int $defaultSegmentNumber,
+        public readonly int $flushIntervalSec,
+        public readonly int $maxOptimizationThreads,
+        public readonly ?int $maxSegmentSize,
+        public readonly ?int $memmapThreshold,
+        public readonly ?int $indexingThreshold,
     ) {
     }
 }

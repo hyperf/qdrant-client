@@ -21,7 +21,7 @@ class CollectionsAliasesResponse
      * @param AliasDescription[] $aliases
      */
     public function __construct(
-        protected array $aliases,
+        public readonly array $aliases,
     ) {
     }
 

@@ -16,9 +16,9 @@ use Hyperf\Qdrant\Struct\PayloadSchemaType;
 class PayloadIndexInfo
 {
     public function __construct(
-        protected PayloadSchemaType $payloadSchemaType,
-        protected int $points,
-        protected ?PayloadSchemaParams $payloadSchemaParams,
+        public readonly PayloadSchemaType $payloadSchemaType,
+        public readonly int $points,
+        public readonly ?PayloadSchemaParams $payloadSchemaParams,
     ) {
     }
 }

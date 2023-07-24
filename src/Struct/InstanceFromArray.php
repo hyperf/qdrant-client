@@ -70,4 +70,13 @@ trait InstanceFromArray
         }
         return $result;
     }
+
+    public function jsonSerialize(): mixed
+    {
+        $result = [];
+        foreach (get_object_vars($this) as $key => $value) {
+            $result[(string) Str::of($key)->snake()] = $value;
+        }
+        return $result;
+    }
 }
