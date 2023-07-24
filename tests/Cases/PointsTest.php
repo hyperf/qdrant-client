@@ -20,7 +20,7 @@ use Hyperf\Qdrant\Struct\Collections\VectorParams;
 use Hyperf\Qdrant\Struct\Points\ExtendedPointId;
 use Hyperf\Qdrant\Struct\Points\ExtendedPointIds;
 use Hyperf\Qdrant\Struct\Points\PayloadSelector;
-use Hyperf\Qdrant\Struct\Points\Record;
+use Hyperf\Qdrant\Struct\Points\Point\Record;
 use Hyperf\Qdrant\Struct\Points\SearchCondition\FieldCondition;
 use Hyperf\Qdrant\Struct\Points\SearchCondition\Filter;
 use Hyperf\Qdrant\Struct\Points\SearchCondition\Match\MatchValue;
