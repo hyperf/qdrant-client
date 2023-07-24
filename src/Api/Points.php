@@ -13,9 +13,9 @@ namespace Hyperf\Qdrant\Api;
 
 use Hyperf\Qdrant\Struct\Points\ExtendedPointId;
 use Hyperf\Qdrant\Struct\Points\ExtendedPointIds;
+use Hyperf\Qdrant\Struct\Points\Point\Record;
 use Hyperf\Qdrant\Struct\Points\Point\ScoredPoint;
 use Hyperf\Qdrant\Struct\Points\ReadConsistencyType;
-use Hyperf\Qdrant\Struct\Points\Record;
 use Hyperf\Qdrant\Struct\Points\SearchCondition\Filter;
 use Hyperf\Qdrant\Struct\Points\SearchParams;
 use Hyperf\Qdrant\Struct\Points\VectorStruct;
