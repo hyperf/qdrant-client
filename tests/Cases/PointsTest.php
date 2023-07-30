@@ -20,6 +20,7 @@ use Hyperf\Qdrant\Struct\Collections\VectorParams;
 use Hyperf\Qdrant\Struct\Points\ExtendedPointId;
 use Hyperf\Qdrant\Struct\Points\ExtendedPointIds;
 use Hyperf\Qdrant\Struct\Points\PayloadSelector;
+use Hyperf\Qdrant\Struct\Points\Point\PointStruct;
 use Hyperf\Qdrant\Struct\Points\Point\Record;
 use Hyperf\Qdrant\Struct\Points\SearchCondition\FieldCondition;
 use Hyperf\Qdrant\Struct\Points\SearchCondition\Filter;
@@ -56,12 +57,12 @@ class PointsTest extends AbstractTestCase
 
     public function testUpsertPoints()
     {
-        $records = [
-            new Record(new ExtendedPointId(1), new VectorStruct(array_fill(0, 128, 1)), ['name' => 'test1', 'age' => 18]),
-            new Record(new ExtendedPointId(2), new VectorStruct(array_fill(0, 128, 1)), ['name' => 'test2', 'age' => 19]),
+        $pointStructs = [
+            new PointStruct(new ExtendedPointId(1), new VectorStruct(array_fill(0, 128, 1)), ['name' => 'test1', 'age' => 18]),
+            new PointStruct(new ExtendedPointId(2), new VectorStruct(array_fill(0, 128, 1)), ['name' => 'test2', 'age' => 19]),
         ];
         self::$points->setWait(true);
-        $result = self::$points->upsertPoints(self::$collectionName, $records);
+        $result = self::$points->upsertPoints(self::$collectionName, $pointStructs);
 
         $this->assertInstanceOf(UpdateResult::class, $result);
     }
@@ -131,11 +132,11 @@ class PointsTest extends AbstractTestCase
             'name' => 'test1',
             'age' => 18,
         ];
-        $records = [
-            new Record(new ExtendedPointId(1), new VectorStruct(array_fill(0, 128, 1)), $payload),
+        $pointStructs = [
+            new PointStruct(new ExtendedPointId(1), new VectorStruct(array_fill(0, 128, 1)), $payload),
         ];
         self::$points->setWait(true);
-        self::$points->upsertPoints(self::$collectionName, $records);
+        self::$points->upsertPoints(self::$collectionName, $pointStructs);
 
         $record = self::$points->getPoint(self::$collectionName, new ExtendedPointId(1));
         $this->assertEquals($payload, $record->payload);
