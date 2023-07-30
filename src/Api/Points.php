@@ -13,6 +13,7 @@ namespace Hyperf\Qdrant\Api;
 
 use Hyperf\Qdrant\Struct\Points\ExtendedPointId;
 use Hyperf\Qdrant\Struct\Points\ExtendedPointIds;
+use Hyperf\Qdrant\Struct\Points\Point\PointStruct;
 use Hyperf\Qdrant\Struct\Points\Point\Record;
 use Hyperf\Qdrant\Struct\Points\Point\ScoredPoint;
 use Hyperf\Qdrant\Struct\Points\ReadConsistencyType;
@@ -64,14 +65,14 @@ class Points extends AbstractApi
     }
 
     /**
-     * @param Record[] $records
+     * @param PointStruct[] $pointStructs
      */
     public function upsertPoints(
         string $collectionName,
-        array $records,
+        array $pointStructs,
     ): UpdateResult {
         $params = [
-            'points' => array_map(fn (Record $record) => $record->toArray(), $records),
+            'points' => array_map(fn (PointStruct $pointStruct) => $pointStruct->toArray(), $pointStructs),
         ];
         $result = $this->request('PUT', "/collections/{$collectionName}/points", $params);
 
