@@ -22,7 +22,7 @@ class OptimizersConfig
         public readonly int $vacuumMinVectorNumber,
         public readonly int $defaultSegmentNumber,
         public readonly int $flushIntervalSec,
-        public readonly int $maxOptimizationThreads,
+        public readonly ?int $maxOptimizationThreads,
         public readonly ?int $maxSegmentSize,
         public readonly ?int $memmapThreshold,
         public readonly ?int $indexingThreshold,
