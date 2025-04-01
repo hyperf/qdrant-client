@@ -23,7 +23,7 @@ class CollectionInfo
         public readonly string $name,
         public readonly CollectionStatus $status,
         public readonly OptimizersStatus $optimizerStatus,
-        public readonly int $vectorsCount,
+        public readonly ?int $vectorsCount,
         public readonly int $indexedVectorsCount,
         public readonly int $pointsCount,
         public readonly int $segmentsCount,
